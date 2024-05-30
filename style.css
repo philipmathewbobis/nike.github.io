@@ -712,7 +712,7 @@ body {
     }
 
     .sidebar:hover {
-        width: 17rem;
+        width: 40%;
     }
 
     .sidebar:hover a {
@@ -748,6 +748,7 @@ body {
         flex-direction: column;
         top: 0;
         padding: 0 0 1rem 0 ;
+        transform: translateX(-20%);
     }
 
     .filters-sort {
