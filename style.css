@@ -161,7 +161,7 @@ body {
     width: 90% !important;
     height: auto;
     display: flex;
-    margin: 2.5rem 5rem 2.5rem 3rem;
+    margin: 2.5rem 0 2.5rem 0;
 }
 
 .promo-price {
@@ -188,33 +188,93 @@ body {
 }
 
 .sidebar {
-    width: 15%;
+    width: 2.5rem;
     height: 100vh;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+    background-color: #E5FCF5;
     top: 50px;
     position: sticky;
     position: -webkit-sticky;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    cursor: pointer;
+    transition: width 0.2s ease;
+    overflow: hidden;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0.25rem;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #000080;
 }
 
 .sidebar .first-section {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 0 0 0.1rem 0;
-    padding: 0 0 0.1rem 0;
+    align-items: baseline;
+    padding: 0 0 0 10px;
+    margin: 0 0 1rem 0;
+    padding: 0 0 0;
+    display: none;
+}
+
+.sidebar .first-section h3 {
+    padding: 8px 10px;
+    border-radius: 16px 12px;
 }
 
 .sidebar .dropdowns {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    display: none;
+    padding: 0 0 0 1rem;
 }
 
 .sidebar .dropdowns h3 {
-    width: 85%;
+    width: 100%;
     border-top: 1px solid var(--podium-cds-color-grey-200);
     margin: 1rem 0 0.1rem 0;
     padding: 1rem 0 0.1rem 0;
+}
+
+.sidebar > i {
+    font-size: 2rem;
+    filter: grayscale(100%) opacity(0.7);
+    transform: rotate(0deg);
+    transition: filter 0.2s ease, opacity 0.2s ease, tranform 0.2s ease;
+}
+
+.sidebar:hover {
+    width: 15rem;
+    overflow-y: auto;
+}
+
+.sidebar:hover .first-section,
+.sidebar:hover .dropdowns {
+    display: flex;
+}
+
+.sidebar:hover > i {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: translateX(200%) rotate(calc(3 * -180deg));
+}
+
+.sidebar .first-section h3:hover{
+    background-color:  #114B5F;
+}
+
+.sidebar .first-section h3:hover a {
+    color: var(--podium-cds-color-grey-100);
 }
 
 .containers {
@@ -496,7 +556,11 @@ body {
     }
 
     .sidebar {
-        display: none;
+       width: 1.7rem;
+    }
+
+    .sidebar > i {
+        transform: translateX(-10%);
     }
 
     .containers .image-container {
@@ -557,6 +621,19 @@ body {
     body {
         overflow-x: hidden;
     }
+
+    .sidebar {
+        width: 2rem;
+    }
+
+    .sidebar:hover {
+        width: 20rem;
+    }
+
+    .sidebar:hover a {
+        font-size: 14px;
+    }
+
     .containers .image-container {
         width: 274px;
         height: 274px;
@@ -578,6 +655,10 @@ body {
     .promo-price .filters-sort span,
     .promo-price .filters-sort i {
     font-size: 0.9rem;
+    }
+
+    .containers {
+        transform: translateX(12%);
     }
 
     .promo-price {
