@@ -725,7 +725,7 @@ body {
     }
 
     .containers {
-        width: 50%;
+        width: 30%;
         height: auto;
         display: flex;
         flex-direction: column;
