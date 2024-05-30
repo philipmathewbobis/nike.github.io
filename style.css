@@ -627,6 +627,26 @@ body {
 @media (width <= 480px ) {
     body {
         overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 115%;
+        height: 0;
+        background-color: rgb(0,0,0,.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        overflow: hidden;
+        z-index: 1000;
+        transition: 0.3s ease;
+        text-align: center;
+    }
+
+    .icons {
+        right: -9%;
     }
 
     .sidebar {
